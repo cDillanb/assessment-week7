@@ -1,0 +1,69 @@
+Alternative Tools Research
+
+1.
+Error handling: Honeycomb
+CI: Gitlab
+
+
+Honeycomb:
+
+2.
+honeycomb has really good data visualization, allows you to see server logs, threshold
+alerts, event logs, etc. Overall rated better than softwares like rollbar.
+
+3.
+Has a sandbox tool on their site that does not require you to sign in or install anything.
+Getting started documentation is very detailed and well written, very easy to follow.
+
+link to sandbox:
+https://play.honeycomb.io/quickstart/datasets/tracing-tour/result/qhz7DfPm8rj
+
+link to documentation:
+https://docs.honeycomb.io/getting-started/quickstart/
+
+4.
+Honeycomb was founded in 2016, Seems very popular and well rated, Is used by companies like
+Eaze, Behaviour interactive, Intercom, Fender, StudentBeans, Geckoboard, Optimizely, and more.
+
+__________________________________________________
+Gitlab:
+
+2.
+Gitlab currently has more than 30 million estimated registered users, it also won an award
+in 2019 for "Best DevOps solution provider by industry leaders". Gitlab was also ranked higher
+than github as a top developer tool.
+source:
+https://about.gitlab.com/is-it-any-good/
+
+3.
+Getting started documentation isn't super detailed and user friendly but still
+does its job. Gitlab does have a page where you can search for any tutorials or
+guides in the documentation.
+
+Docs:
+https://docs.gitlab.com/
+
+4.
+Gitlab was founded in 2014, apparently super popular, Used by more than 100,000 organizations.
+
+____________________________________________________________________________________________________
+
+Runtime.js:
+doublerAppend vs doublerInsert
+the runtime for doublerInsert is much slower than doublerAppend, 992ms vs 3ms
+
+                        Append times        |        Insert times
+tinyArray                   7 us            |            12.7 us
+                                            |
+smallArray                  7 us            |            11 us   
+                                            |
+mediumArray                 42.3 us         |            132.4 us
+                                            |
+largeArray                  408.9 us        |            9.2 ms
+                                            |
+extraLargeArray             3.3 ms          |            993.2 ms   
+
+Both methods start out with very similar times, but as we increase the size of the array those times quickly start to become distanced.
+Append times increase fairly constantly based on the size of the array, while the Insert times scale much faster and slows down the code
+exponentially. This is because the Insert method unshifts the number to the front of the list, which means every index in the array
+is pushed over 1 to make room for the new value. the larger the array the more unwieldy this can become very quickly.
