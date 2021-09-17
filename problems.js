@@ -26,7 +26,6 @@ console.log(hasUniqueChars("hello world"));
 
 // Pangram Sentence
 const isPangram = (str) => {
-  let uniqueLetters = [];
   let answer = false;
 
   str = str.split(" ").join("");
@@ -34,18 +33,13 @@ const isPangram = (str) => {
   str = str.replace(/[^a-zA-Z ]/g, "");
   str = str.split("");
 
-    str.forEach((letter) => {
-        console.log(uniqueLetters)
-        if (uniqueLetters.length === 26) {
-        answer = true;
-        return;
-      } else if (str.lastIndexOf(letter) === str[letter]) {
-        uniqueLetters.push(letter);
-      }
-    });
+  str = str.filter((item, i, ar) => ar.indexOf(item) === i);
+  if(str.length === 26) {
+      answer = true
+  }
   return answer;
 };
-// doesnt work yet
+// I think I fixed it
 console.log(isPangram("The quick brown fox jumps over the lazy dog!"));
 
 
